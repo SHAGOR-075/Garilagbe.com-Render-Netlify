@@ -67,9 +67,9 @@ router.post('/init', protect, [
       total_amount: amount,
       currency: currency,
       tran_id: transactionId, // use unique tran_id for each api call
-      success_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/success?tran_id=${transactionId}&amount=${amount}`,
-      fail_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/fail?tran_id=${transactionId}&amount=${amount}`,
-      cancel_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/cancel?tran_id=${transactionId}&amount=${amount}`,
+      success_url: `${process.env.CLIENT_URL || 'https://garilagbe-client.netlify.app'}/payment/success?tran_id=${transactionId}&amount=${amount}`,
+      fail_url: `${process.env.CLIENT_URL || 'https://garilagbe-client.netlify.app'}/payment/fail?tran_id=${transactionId}&amount=${amount}`,
+      cancel_url: `${process.env.CLIENT_URL || 'https://garilagbe-client.netlify.app'}/payment/cancel?tran_id=${transactionId}&amount=${amount}`,
       ipn_url: `${process.env.BACKEND_URL || 'https://garilagbe-com.onrender.com'}/api/payment/ipn`,
       shipping_method: 'NO',
       product_name: `Car Rental - ${booking.car.name}`,

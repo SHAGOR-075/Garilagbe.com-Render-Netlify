@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000
 // Security middleware
 app.use(helmet())
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: ['https://garilagbe-client.netlify.app', 'https://garilagbe-admin.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   credentials: true
 }))
