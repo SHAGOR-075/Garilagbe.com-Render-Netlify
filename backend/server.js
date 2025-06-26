@@ -594,7 +594,7 @@ app.use('*', (req, res) => {
 })
 
 setInterval(() => {
-  fetch('https://garilagbe-com.onrender.com/health') // or any route that exists
+  fetch('https://garilagbe-com.onrender.com/api/health') // or any route that exists
     .then(() => console.log('Self ping sent to keep server awake'))
     .catch((err) => console.log('Ping failed:', err.message))
 }, 5 * 60 * 1000) // every 5 minutes
