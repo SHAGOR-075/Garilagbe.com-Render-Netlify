@@ -19,8 +19,8 @@ const SearchForm = () => {
     const fetchOptions = async () => {
       try {
         const [locRes, typeRes] = await Promise.all([
-          axios.get('/api/cars/locations'),
-          axios.get('/api/cars/types')
+          axios.get('https://garilagbe-com.onrender.com/api/cars/locations'),
+          axios.get('https://garilagbe-com.onrender.com/api/cars/types')
         ])
         setLocations(locRes.data.data)
         setVehicleTypes(typeRes.data.data)

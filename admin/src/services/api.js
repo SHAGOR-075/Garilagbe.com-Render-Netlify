@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:5000/api'
+const API_BASE_URL = 'https://garilagbe-com.onrender.com/api'
 
 // Create axios instance
 const api = axios.create({
@@ -42,42 +42,42 @@ api.interceptors.response.use(
 
 // Auth API
 export const authAPI = {
-  login: (credentials) => api.post('/auth/login', credentials),
-  getProfile: () => api.get('/auth/me')
+  login: (credentials) => api.post('https://garilagbe-com.onrender.com/api/auth/login', credentials),
+  getProfile: () => api.get('https://garilagbe-com.onrender.com/api/auth/me')
 }
 
 // Cars API
 export const carsAPI = {
-  getCars: (params = {}) => api.get('/cars', { params }),
-  getCar: (id) => api.get(`/cars/${id}`),
-  createCar: (carData) => api.post('/cars', carData),
-  updateCar: (id, carData) => api.put(`/cars/${id}`, carData),
-  deleteCar: (id) => api.delete(`/cars/${id}`)
+  getCars: (params = {}) => api.get('https://garilagbe-com.onrender.com/api/cars', { params }),
+  getCar: (id) => api.get(`https://garilagbe-com.onrender.com/api/cars/${id}`),
+  createCar: (carData) => api.post('https://garilagbe-com.onrender.com/api/cars', carData),
+  updateCar: (id, carData) => api.put(`https://garilagbe-com.onrender.com/api/cars/${id}`, carData),
+  deleteCar: (id) => api.delete(`https://garilagbe-com.onrender.com/api/cars/${id}`)
 }
 
 // Bookings API
 export const bookingsAPI = {
-  getBookings: (params = {}) => api.get('/bookings', { params }),
-  getBooking: (id) => api.get(`/bookings/${id}`),
-  updateBookingStatus: (id, status) => api.put(`/bookings/${id}/status`, { status }),
-  getBookingStats: () => api.get('/bookings/stats'),
-  getMonthlyRevenue: (months = 6) => api.get(`/bookings/revenue/monthly?months=${months}`)
+  getBookings: (params = {}) => api.get('https://garilagbe-com.onrender.com/api/bookings', { params }),
+  getBooking: (id) => api.get(`https://garilagbe-com.onrender.com/api/bookings/${id}`),
+  updateBookingStatus: (id, status) => api.put(`https://garilagbe-com.onrender.com/api/bookings/${id}/status`, { status }),
+  getBookingStats: () => api.get('https://garilagbe-com.onrender.com/api/bookings/stats'),
+  getMonthlyRevenue: (months = 6) => api.get(`https://garilagbe-com.onrender.com/api/bookings/revenue/monthly?months=${months}`)
 }
 
 // Users API
 export const usersAPI = {
-  getUsers: (params = {}) => api.get('/users', { params }),
-  getUser: (id) => api.get(`/users/${id}`),
-  updateUser: (id, userData) => api.put(`/users/${id}`, userData),
-  deleteUser: (id) => api.delete(`/users/${id}`)
+  getUsers: (params = {}) => api.get('https://garilagbe-com.onrender.com/api/users', { params }),
+  getUser: (id) => api.get(`https://garilagbe-com.onrender.com/api/users/${id}`),
+  updateUser: (id, userData) => api.put(`https://garilagbe-com.onrender.com/api/users/${id}`, userData),
+  deleteUser: (id) => api.delete(`https://garilagbe-com.onrender.com/api/users/${id}`)
 }
 
 // Analytics API
 export const analyticsAPI = {
-  getDashboard: (timeRange = '6months') => api.get(`/analytics/dashboard?timeRange=${timeRange}`),
-  getRevenue: (timeRange = '6months') => api.get(`/analytics/revenue?timeRange=${timeRange}`),
-  getBookingStats: () => api.get('/analytics/bookings'),
-  getFleetStats: () => api.get('/analytics/fleet')
+  getDashboard: (timeRange = '6months') => api.get(`https://garilagbe-com.onrender.com/api/analytics/dashboard?timeRange=${timeRange}`),
+  getRevenue: (timeRange = '6months') => api.get(`https://garilagbe-com.onrender.com/api/analytics/revenue?timeRange=${timeRange}`),
+  getBookingStats: () => api.get('https://garilagbe-com.onrender.com/api/analytics/bookings'),
+  getFleetStats: () => api.get('https://garilagbe-com.onrender.com/api/analytics/fleet')
 }
 
 export default api

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:5000/api'
+const API_BASE_URL = 'https://garilagbe-com.onrender.com/api'
 
 // Create axios instance
 const api = axios.create({
@@ -42,34 +42,34 @@ api.interceptors.response.use(
 
 // Auth API
 export const authAPI = {
-  register: (userData) => api.post('/auth/register', userData),
-  login: (credentials) => api.post('/auth/login', credentials),
-  getProfile: () => api.get('/auth/me'),
-  updateProfile: (userData) => api.put('/auth/profile', userData)
+  register: (userData) => api.post('https://garilagbe-com.onrender.com/api/auth/register', userData),
+  login: (credentials) => api.post('https://garilagbe-com.onrender.com/api/auth/login', credentials),
+  getProfile: () => api.get('https://garilagbe-com.onrender.com/api/auth/me'),
+  updateProfile: (userData) => api.put('https://garilagbe-com.onrender.com/api/auth/profile', userData)
 }
 
 // Cars API
 export const carsAPI = {
-  getCars: (params = {}) => api.get('/cars', { params }),
+  getCars: (params = {}) => api.get('https://garilagbe-com.onrender.com/api/cars', { params }),
   getCar: (id) => api.get(`/cars/${id}`),
-  checkAvailability: (id, params) => api.get(`/cars/${id}/availability`, { params }),
-  advancedSearch: (params) => api.get('/cars/search/advanced', { params })
+  checkAvailability: (id, params) => api.get(`https://garilagbe-com.onrender.com/api/cars/${id}/availability`, { params }),
+  advancedSearch: (params) => api.get('https://garilagbe-com.onrender.com/api/cars/search/advanced', { params })
 }
 
 // Bookings API
 export const bookingsAPI = {
-  getBookings: (params = {}) => api.get('/bookings', { params }),
-  getBooking: (id) => api.get(`/bookings/${id}`),
-  createBooking: (bookingData) => api.post('/bookings', bookingData),
-  cancelBooking: (id, reason) => api.put(`/bookings/${id}/cancel`, { reason })
+  getBookings: (params = {}) => api.get('https://garilagbe-com.onrender.com/api/bookings', { params }),
+  getBooking: (id) => api.get(`https://garilagbe-com.onrender.com/api/bookings/${id}`),
+  createBooking: (bookingData) => api.post('https://garilagbe-com.onrender.com/api/bookings', bookingData),
+  cancelBooking: (id, reason) => api.put(`https://garilagbe-com.onrender.com/api/bookings/${id}/cancel`, { reason })
 }
 
 // Payment API
 export const paymentAPI = {
-  initPayment: (paymentData) => api.post('/payment/init', paymentData),
-  validatePayment: (validationData) => api.post('/payment/validate', validationData),
-  getPaymentStatus: (transactionId) => api.get(`/payment/status/${transactionId}`),
-  refundPayment: (refundData) => api.post('/payment/refund', refundData)
+  initPayment: (paymentData) => api.post('https://garilagbe-com.onrender.com/api/payment/init', paymentData),
+  validatePayment: (validationData) => api.post('https://garilagbe-com.onrender.com/api/payment/validate', validationData),
+  getPaymentStatus: (transactionId) => api.get(`https://garilagbe-com.onrender.com/api/payment/status/${transactionId}`),
+  refundPayment: (refundData) => api.post('https://garilagbe-com.onrender.com/api/payment/refund', refundData)
 }
 
 export default api

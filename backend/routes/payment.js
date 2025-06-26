@@ -70,7 +70,7 @@ router.post('/init', protect, [
       success_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/success?tran_id=${transactionId}&amount=${amount}`,
       fail_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/fail?tran_id=${transactionId}&amount=${amount}`,
       cancel_url: `${process.env.CLIENT_URL || 'http://localhost:3000'}/payment/cancel?tran_id=${transactionId}&amount=${amount}`,
-      ipn_url: `${process.env.BACKEND_URL || 'http://localhost:5000'}/api/payment/ipn`,
+      ipn_url: `${process.env.BACKEND_URL || 'https://garilagbe-com.onrender.com'}/api/payment/ipn`,
       shipping_method: 'NO',
       product_name: `Car Rental - ${booking.car.name}`,
       product_category: 'Car Rental',
